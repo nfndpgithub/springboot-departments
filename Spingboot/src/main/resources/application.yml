@@ -1,0 +1,45 @@
+spring:
+  profiles:
+      active: qa
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    password: 'nemanja'
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: 'nemanja'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+welcome:
+  message: cao dev
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    password: 'nemanja'
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: 'nemanja'
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+welcome:
+  message: cao qa
